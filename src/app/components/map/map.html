@@ -1,7 +1,20 @@
+<nav>
+  <img src="assets/images/afaqy-logo.svg" alt="Afaqy Logo" />
+  <!-- <h1>Afaqy Task</h1> -->
+
+  <button
+    (click)="hideFilters = !hideFilters"
+    [ngClass]="hideFilters ? 'display' : 'hide'"
+  >
+    {{ hideFilters ? "Display Filters" : "Hide Filters" }}
+  </button>
+</nav>
 <div class="map-container">
   <div style="height: 100vh; width: 100%" leaflet [leafletOptions]="options">
     <div [leafletLayers]="layers"></div>
   </div>
+
+  @if (!hideFilters) {
 
   <app-unit-list
     class="overlay"
@@ -9,4 +22,5 @@
     (searchChange)="onSearch($event)"
     (visibilityChange)="onVisibilityChange($event)"
   ></app-unit-list>
+  }
 </div>

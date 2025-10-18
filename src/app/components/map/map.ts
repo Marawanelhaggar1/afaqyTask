@@ -5,6 +5,7 @@ import { LeafletModule } from '@bluehalo/ngx-leaflet';
 import { UnitData } from '../../core/models/unit-data';
 import { delay, timer } from 'rxjs';
 import { UnitServices } from '../../core/services/unit-services';
+import { CommonModule } from '@angular/common';
 
 interface Unit extends UnitData {
   marker: L.Marker;
@@ -12,7 +13,7 @@ interface Unit extends UnitData {
 }
 @Component({
   selector: 'app-map',
-  imports: [UnitList, LeafletModule],
+  imports: [UnitList, LeafletModule, CommonModule],
   templateUrl: './map.html',
   styleUrl: './map.scss',
 })
@@ -28,6 +29,7 @@ export class Map implements OnInit, OnDestroy {
     ],
   };
 
+  hideFilters: boolean = false;
   units: Unit[] = [];
   layers: L.Layer[] = [];
   private currentSearch = '';
