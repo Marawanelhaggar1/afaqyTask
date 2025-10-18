@@ -1,0 +1,24 @@
+<input
+  type="text"
+  [(ngModel)]="searchTerm"
+  (ngModelChange)="onSearch($event)"
+  placeholder="Search unit..."
+  class="search-input"
+/>
+
+<ul class="unit-list">
+  @for (unit of units; track $index) {
+
+  <li>
+    <label>
+      <input
+        type="checkbox"
+        [checked]="unit.visible"
+        (change)="onToggleVisibility(unit, $event)"
+      />
+      {{ unit.name }}
+    </label>
+  </li>
+
+  }
+</ul>

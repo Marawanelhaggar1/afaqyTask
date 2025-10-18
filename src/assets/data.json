@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Marwan", "lat": 30.045, "lng": 31.236 },
+  { "id": 2, "name": "Ahmed", "lat": 30.047, "lng": 31.233 },
+  { "id": 3, "name": "Lamies", "lat": 30.043, "lng": 31.24 },
+  { "id": 4, "name": "Andrew", "lat": 30.041, "lng": 31.238 },
+  { "id": 5, "name": "Mohammed", "lat": 30.041, "lng": 31.238 },
+  { "id": 6, "name": "Abdelrahman", "lat": 30.041, "lng": 31.238 },
+  { "id": 7, "name": "Magdy", "lat": 30.041, "lng": 31.238 },
+  { "id": 8, "name": "Moez", "lat": 30.041, "lng": 31.238 },
+  { "id": 9, "name": "Samy", "lat": 30.041, "lng": 31.238 },
+  { "id": 10, "name": "Abdallah", "lat": 30.046, "lng": 31.234 }
+]

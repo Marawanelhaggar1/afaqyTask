@@ -1,0 +1,12 @@
+<div class="map-container">
+  <div style="height: 100vh; width: 100%" leaflet [leafletOptions]="options">
+    <div [leafletLayers]="layers"></div>
+  </div>
+
+  <app-unit-list
+    class="overlay"
+    [units]="units"
+    (searchChange)="onSearch($event)"
+    (visibilityChange)="onVisibilityChange($event)"
+  ></app-unit-list>
+</div>

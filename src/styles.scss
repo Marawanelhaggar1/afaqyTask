@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+// /* styles.css */
+// .leaflet-container {
+//   height: 100vh;
+//   width: 100%;
+// }
+
+// .leaflet-div-icon {
+//   background: transparent;
+//   border: none;
+// }
+
+// .leaflet-control-container {
+//   z-index: 500;
+// }
+
+/* styles.css */
+.leaflet-container {
+  height: 100vh;
+  width: 100%;
+}
+
+.leaflet-control-container {
+  z-index: 500;
+}
