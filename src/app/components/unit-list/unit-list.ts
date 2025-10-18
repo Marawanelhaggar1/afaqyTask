@@ -5,6 +5,7 @@ import {
   OnDestroy,
   OnInit,
   Output,
+  SimpleChanges,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -31,17 +32,32 @@ export class UnitList implements OnInit, OnDestroy {
     visible: boolean;
   }>();
 
+  updatedUnits: Unit[] = [];
   searchTerm = '';
   private searchSubject = new Subject<string>();
-
+  constructor() {}
   ngOnInit(): void {
     this.searchSubject
       .pipe(debounceTime(300), distinctUntilChanged())
       .subscribe((term) => this.searchChange.emit(term));
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['units']) {
+      this.updatedUnits = [...this.units];
+      console.log(this.updatedUnits);
+    }
+  }
+
   onSearch(term: string) {
-    this.searchSubject.next(term);
+    this.searchSubject.next(term.toLowerCase());
+    if (term.length === 0) {
+      this.updatedUnits = this.units;
+    } else {
+      this.updatedUnits = this.units.filter((u) =>
+        u.name.toLowerCase().includes(term)
+      );
+    }
   }
 
   onToggleVisibility(unit: Unit, event: Event) {

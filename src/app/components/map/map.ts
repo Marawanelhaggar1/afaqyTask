@@ -116,11 +116,10 @@ export class Map implements OnInit, OnDestroy {
   }
 
   private applyVisibilityAndSearch() {
-    const term = this.currentSearch.toLowerCase();
-
+    // const term = this.currentSearch.toLowerCase();
     this.layers = this.units
       .filter((u) => u.visible)
-      .filter((u) => u.name.toLowerCase().includes(term))
+      .filter((u) => u.name.toLowerCase().includes(this.currentSearch))
       .map((u) => u.marker);
   }
 }
